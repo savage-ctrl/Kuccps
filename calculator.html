@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>KCSE Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h2>KCSE Mean Grade Calculator</h2>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="calculator.html">Calculator</a>
+<a href="premium.html">Premium</a>
+</nav>
+
+<section class="container">
+<p>Enter your KCSE subject marks (comma separated)</p>
+
+<input id="marks" placeholder="Example: 75,68,72,60,55,80,65">
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+</section>
+
+<footer>Designed by Marvel Muhoro</footer>
+
+<script>
+function calculate(){
+ let marks=document.getElementById("marks").value.split(",").map(Number);
+ let avg=marks.reduce((a,b)=>a+b,0)/marks.length;
+ document.getElementById("result").innerText="Mean Score: "+avg.toFixed(2);
+}
+</script>
+
+</body>
+</html>
